@@ -1,0 +1,11 @@
+create table mn_cv
+(
+    cv_name varchar(200),
+    custom  json,
+    uid     serial not null
+        constraint mn_cv_pk
+            primary key
+);
+
+alter table mn_cv
+    owner to postgres;
