@@ -5,6 +5,7 @@ import com.ksga.demo.supports.CVDynamicSqlSupport;
 import com.ksga.demo.supports.handler.JsonCustomSectionHandler;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.mybatis.dynamic.sql.insert.render.GeneralInsertStatementProvider;
 import org.mybatis.dynamic.sql.insert.render.InsertStatementProvider;
 import org.mybatis.dynamic.sql.select.render.SelectStatementProvider;
 import org.mybatis.dynamic.sql.util.SqlProviderAdapter;
@@ -24,5 +25,5 @@ public interface CVMapper  extends CommonSelectMapper, CommonInsertMapper<CV> {
     public List<CV> selectMany(SelectStatementProvider statementProvider);
 
     @InsertProvider(type=SqlProviderAdapter.class, method="insert")
-    int insert(InsertStatementProvider<CV> insertStatement);
+    int insert(InsertStatementProvider insertStatement);
 }

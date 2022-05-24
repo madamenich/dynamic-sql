@@ -1,5 +1,6 @@
 package com.ksga.demo.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ksga.demo.model.CV;
 import com.ksga.demo.service.CVServiceImp;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class CVRestController {
         return serviceImp.findAll();
     }
     @PostMapping
-   int add(@RequestBody CV cv) throws JSONException {
+   int add(@RequestBody CV cv) throws JSONException, JsonProcessingException {
         return serviceImp.add(cv);
     }
 }
